@@ -42,34 +42,36 @@
 
 
 
-    <div class="listingForm-container">
-        <h1 class="text-center mt-5">Add to LISTING</h1>
-        <form id="listingForm" enctype="multipart/form-data">
-            <p id="listing-error" class="text-danger"><strong></strong></p>
-            <p id="success" class="text-success"><strong></strong></p>
-            <div class="form-group">
-                <label for="title">Title *</label>
-                <input type="text" class="form-control" id="title" placeholder="Enter Title" required>
-            </div>
-            <div class="form-group">
-                <label for="description">Description *</label>
-                <textarea class="form-control" id="description" rows="3" placeholder="Enter Description" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="price">Price *</label>
-                <input type="number" class="form-control" id="price" placeholder="Enter Price in BDT" required>
-            </div>
-            <div class="form-group">
-                <label for="condition">Condition *</label>
-                <input type="text" class="form-control" id="condition" placeholder="Enter Condition" required>
-            </div>
-            <div class="form-group">
-                <label for="image">Image *</label>
-                <input type="file" class="form-control-file" id="image" accept="image/*" required>
-                <small class="form-text text-muted">Accepted file types: JPEG, PNG, GIF</small>
-            </div>
-            <button type="button" id="submitBtn" class="btn btn-primary mb-5" onclick="editListed()">Submit</button>
-        </form>
+    <div class="register-div">
+        <div class="register-container">
+            <h1 class="text-center mt-5">Add to LISTING</h1>
+            <form id="register-form" enctype="multipart/form-data">
+                <p id="listing-error" class="text-danger"><strong></strong></p>
+                <p id="success" class="text-success"><strong></strong></p>
+                <div class="form-group">
+                    <label for="title">Title *</label>
+                    <input type="text" class="form-control" id="title" placeholder="Enter Title" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description *</label>
+                    <textarea class="form-control" id="description" rows="3" placeholder="Enter Description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price *</label>
+                    <input type="number" class="form-control" id="price" placeholder="Enter Price in BDT" required>
+                </div>
+                <div class="form-group">
+                    <label for="condition">Condition *</label>
+                    <input type="text" class="form-control" id="condition" placeholder="Enter Condition" required>
+                </div>
+                <div class="form-group">
+                    <label for="image">Image *</label>
+                    <input type="file" class="form-control-file" id="image" accept="image/*" required>
+                    <small class="form-text text-muted">Accepted file types: JPEG, PNG, GIF</small>
+                </div>
+                <button type="button" id="submitBtn" class="btn btn-primary mb-5" onclick="editListed()">Save</button>
+            </form>
+        </div>
     </div>
 
 

@@ -1,8 +1,43 @@
-.listingForm-container {
+/* .listingForm-container {
     margin-top: 100px;
   }
   
   #listingForm {
     max-width: 500px;
     margin: 0 auto;
-  }
+  } */
+
+
+  body {
+    background-color: #f8f9fa;
+}
+
+.register-div, .listingForm-container {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-bottom: 10px;
+}
+
+.register-container, .listingForm-container {
+    width: 600px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+.register-container h2, .listingForm-container h2 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.register-form input, .listingForm-container .form-control, .listingForm-container .form-control-file {
+    margin-bottom: 20px;
+}
+
+.register-form button, .listingForm-container button {
+    width: 100%;
+}

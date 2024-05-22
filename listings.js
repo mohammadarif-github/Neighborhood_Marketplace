@@ -7,7 +7,14 @@ const listings =()=>{
         }
     })
     .then((res)=>res.json())
-    .then((data)=>showlisting(data))
+    .then((data) => {
+        if (data.detail) {
+            window.location.href = "login.html";
+            alert("You must be logged in to see the Listing Product !!");
+        }
+        else
+            showlisting(data);
+    })
     .catch((error)=>console.log("Error Fetching Listings",error));
 };
 
@@ -53,7 +60,6 @@ const showlisting =(items)=>{
 const createTransaction = (listingId,event) => {
     const Token = localStorage.getItem("token");
     const user_id = localStorage.getItem("id")
-    const sellerId = event.target.getAttribute('data-seller-id'); 
     console.log("Buyer:",user_id)
     console.log("Token:",Token)
     console.log("Listing:",listingId)
