@@ -77,16 +77,18 @@ const Login = (event) => {
                 window.location.href="profile.html";
             }
             else {
-                document.getElementById("login-error").innerText("Username and Password are required");
+                document.getElementById("login_error").innerText= "Wrong Credential !!!";
+                window.location.href("login.html")
             }
         })
         .catch((error)=>{
             console.error("Login Error :", error);
-            document.getElementById("login_eror").innerText("Username and Password are required");
+            document.getElementById("login_error").innerText = "Wrong Credential";
+            window.location.href("login.html")
         });
     }
     else {
-        document.getElementById("login-error").innerText = "Wrong Credential !!!";
+        document.getElementById("login_error").innerText = "Wrong Credential !!!";
     }
 };
 
