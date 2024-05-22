@@ -1,0 +1,121 @@
+body {
+    background-color: #f8f9fa;
+}
+.register-div {
+    margin-top:70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-bottom:10px;
+}
+
+.register-container {
+    width: 600px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+.register-container h2 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.register-form input {
+    margin-bottom: 20px;
+}
+
+.register-form button {
+    width: 100%;
+}
+
+.btn-search {
+    background-color: silver;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-color: white; /* Remove border color */
+    transition: background-color 0.3s, color 0.3s; /* Add transition */
+}
+
+.btn-search:hover {
+    background-color: #ffc107; /* Change background color on hover */
+    color: black; /* Change text color on hover */
+}
+
+
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107;
+}
+
+.navbar-toggler-icon {
+    color: white;
+    /* Change toggle icon color */
+}
+
+.navbar-toggler {
+    background-color: yellow;
+    /* Change toggle button background color */
+    border-color: blue;
+    /* Remove border color */
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    /* Remove focus box shadow */
+}
+
+.navbar-toggler:hover .navbar-toggler-icon {
+    color: #ffc107;
+    /* Change toggle icon color on hover */
+}
+
+.navbar {
+    background-color: aqua;
+    backdrop-filter: blur(10px);
+}
+
+.footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40;
+    /* Adjust as needed */
+    color: #fff;
+    /* Adjust as needed */
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+.footer p {
+    margin: 0;
+}
+
+
+.profile-link {
+    text-decoration: none;
+}
+
+.profile-icon {
+    padding-left: 10px;
+    font-size: 30px;
+    color: #007bff;
+    /* Change the color as desired */
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighborhood Marketplace</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/transaction.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar-container">
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="navbar-inner-container d-flex align-items-center m-auto p-2">
+                <a class="navbar-brand" href="index.html">Neighborhood Marketplace</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                    </ul>
+                    <!-- Login/Signup buttons -->
+                    <ul class="navbar-nav" id="auth-buttons">
+                        <!-- Dynamic Butttons  -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- <div class="transaction-container">
+        <div class="row mt-3">
+            <div class="col-md-5 mx-auto">
+                <form id="transactionForm">
+                    <div class="form-group">
+                        <label for="transaction-status"><h2>Status</h2></label>
+                        <select class="form-control" id="status">
+                            <option value="Pending">Pending</option>
+                            <option value="Paid">Paid</option>
+                        </select>
+                    </div>
+                    <button type="submit" id="status-submit" class="btn btn-primary" style="align-items: center;">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div> -->
+
+
+    <div class="transaction-container">
+        <h2 style="text-align: center;">Transactions</h2>
+        <table id="transactionTable" class="table">
+            <!-- Table rows will be inserted here dynamically -->
+        </table>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white" id="ftr">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <h5>About Us</h5>
+                    <p>At Neighborhood Marketplace, we connect neighbors and empower local commerce.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h5>Follow Us</h5>
+                    <ul class="list-inline social-icons">
+                        <li class="list-inline-item"><a href="https://www.facebook.com/example" target="_blank"><i
+                                    class="fab fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.instagram.com/example" target="_blank"><i
+                                    class="fab fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="https://twitter.com/example" target="_blank"><i
+                                    class="fab fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.youtube.com/example" target="_blank"><i
+                                    class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-left">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            <a class="text-decoration-none">Chittagong,Bangladesh</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:01648232795">01648232795</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none"
+                                href="mailto:dish.discovery@gmail.com">neighborhood@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="footer-separator">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-light">
+                        Copyright &copy; 2024 Neighborhood Marketplace
+                        | Designed by <a rel="sponsored"
+                            href="https://docs.google.com/document/d/1QqIwXzi6gH0vxKVG70SfQ0DoJOVkH82z5GObbhan3ds/edit?usp=sharing"
+                            target="_blank">Md. Ariful</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="auth.js"></script>
+    <script src="transaction.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slugify"></script>
+
+</body>
+
+</html>

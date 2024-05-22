@@ -1,0 +1,140 @@
+.navbar {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107;
+}
+
+.navbar-toggler-icon {
+    color: black;
+    /* Change toggle icon color */
+}
+
+.navbar-toggler {
+    background-color: gray;
+    /* Change toggle button background color */
+    border-color: white;
+    /* Remove border color */
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    /* Remove focus box shadow */
+}
+
+.navbar-toggler:hover .navbar-toggler-icon {
+    color: #ffc107;
+    /* Change toggle icon color on hover */
+}
+
+/* Banner Section Styling */
+#banner {
+    position: relative;
+    background-image: url('img/banner-img.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    /* padding:  0; */
+}
+
+#banner-img {
+    height: 820px;
+    width: auto;
+}
+
+#banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+#banner h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#banner p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Welcome Section Styling */
+#welcome {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#welcome h2 {
+    margin-bottom: 30px;
+}
+
+/* Footer Styling */
+.footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40;
+    /* Adjust as needed */
+    color: #fff;
+    /* Adjust as needed */
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+.footer p {
+    margin: 0;
+}
+
+
+
+.btn-search {
+    background-color: silver;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-color: white;
+    /* Remove border color */
+    transition: background-color 0.3s, color 0.3s;
+    /* Add transition */
+}
+
+.btn-search:hover {
+    background-color: #ffc107;
+    /* Change background color on hover */
+    color: black;
+    /* Change text color on hover */
+}
+
+.profile-link {
+    text-decoration: none;
+}
+
+.profile-icon {
+    padding-left: 10px;
+    font-size: 30px;
+    color: #007bff;
+    /* Change the color as desired */
+}
