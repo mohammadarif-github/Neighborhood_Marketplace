@@ -76,6 +76,9 @@ const Login = (event) => {
                 alert("Login successfull.");
                 window.location.href="profile.html";
             }
+            else {
+                document.getElementById("login-error").innerText("Username and Password are required");
+            }
         })
         .catch((error)=>{
             console.error("Login Error :", error);
@@ -83,7 +86,7 @@ const Login = (event) => {
         });
     }
     else {
-        Document.getElementById("login-error").innerText = "Wrong Credential !!!";
+        document.getElementById("login-error").innerText = "Wrong Credential !!!";
     }
 };
 
