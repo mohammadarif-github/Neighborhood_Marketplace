@@ -31,91 +31,225 @@ body {
     width: 100%;
 }
 
-.btn-search {
-    background-color: silver;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-color: white; /* Remove border color */
-    transition: background-color 0.3s, color 0.3s; /* Add transition */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8); /* Less transparent for better visibility */
+    backdrop-filter: blur(10px);
 }
-
-.btn-search:hover {
-    background-color: #ffc107; /* Change background color on hover */
-    color: black; /* Change text color on hover */
-}
-
-
 
 .navbar-brand,
 .navbar-nav .nav-link {
+    color: white;
     font-size: 20px;
     font-weight: bold;
 }
 
 .navbar-nav .nav-link {
+    color: white;
     font-size: 16px;
     text-transform: uppercase;
+    transition: color 0.3s;
 }
+
 
 .navbar-nav .nav-link:hover {
     color: #ffc107;
 }
 
-.navbar-toggler-icon {
-    color: white;
-    /* Change toggle icon color */
+.navbar-toggler {
+    background-color: gray; /* Gray background for better visibility */
+    border: none; /* No border */
 }
 
-.navbar-toggler {
-    background-color: yellow;
-    /* Change toggle button background color */
-    border-color: blue;
-    /* Remove border color */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 .navbar-toggler:focus {
-    box-shadow: none;
-    /* Remove focus box shadow */
+    box-shadow: none; /* Remove focus box shadow */
 }
 
 .navbar-toggler:hover .navbar-toggler-icon {
-    color: #ffc107;
-    /* Change toggle icon color on hover */
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ffc107' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-.navbar {
-    background-color: aqua;
-    backdrop-filter: blur(10px);
+.navbar-collapse {
+    justify-content: flex-end; /* Align the collapse content to the right */
 }
 
-.footer {
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #343a40;
-    /* Adjust as needed */
-    color: #fff;
-    /* Adjust as needed */
-    text-align: center;
-    padding: 20px 0;
+.navbar-nav {
+    margin-left: auto; /* Ensure nav items are pushed to the right */
+    text-align: center; /* Center-align text when toggled */
 }
 
-
-.footer p {
-    margin: 0;
+#auth-buttons .nav-item {
+    margin-left: 10px; /* Add space between login and signup buttons */
 }
 
+/* Responsive styles */
+@media (max-width: 1199.98px) {
+    .navbar-brand {
+        font-size: 18px; /* Adjust brand font size */
+    }
+    .navbar-nav .nav-link {
+        font-size: 14px; /* Adjust nav link font size */
+        padding: 8px 0; /* Adjust padding for better spacing */
+        width: 100%; /* Full width links */
+    }
+    .navbar-toggler {
+        margin-left: auto; /* Align toggler to the right */
+    }
+    .navbar-nav .nav-item {
+        margin-left: 0; /* Remove margin for better alignment */
+    }
+}
 
+@media (max-width: 991.98px) {
+    .navbar-brand {
+        font-size: 16px; /* Further adjust brand font size */
+    }
+    .navbar-nav .nav-link {
+        font-size: 12px; /* Further adjust nav link font size */
+        padding: 6px 0; /* Adjust padding for smaller screens */
+    }
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* Ensure the toggler icon remains visible */
+    }
+}
+
+@media (max-width: 767.98px) {
+    .navbar-brand {
+        font-size: 14px; /* Further adjust brand font size */
+    }
+    .navbar-nav .nav-link {
+        font-size: 10px; /* Further adjust nav link font size */
+        padding: 5px 0; /* Adjust padding for smallest screens */
+    }
+    .navbar-collapse {
+        justify-content: center; /* Center collapse content */
+    }
+    .navbar-nav .nav-item {
+        margin-left: 0; /* Remove margin for better alignment */
+    }
+    .navbar-nav {
+        margin-left: 0; /* Ensure nav items are pushed to the right */
+        text-align: center; /* Center-align text when toggled */
+    }
+    .navbar-nav .nav-link {
+        width: 100%; /* Full width links */
+    }
+}
+
+@media (max-width: 575.98px) {
+    .navbar-brand {
+        font-size: 12px; /* Further adjust brand font size */
+    }
+    .navbar-nav .nav-link {
+        font-size: 8px; /* Further adjust nav link font size */
+        padding: 4px 0; /* Adjust padding for smallest screens */
+    }
+    .navbar-nav {
+        margin-left: 0; /* Ensure nav items are pushed to the right */
+        text-align: center; /* Center-align text when toggled */
+    }
+    .navbar-nav .nav-link {
+        width: 100%; /* Full width links */
+    }
+}
+
+/* Profile link and icon styles */
 .profile-link {
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 5px;
 }
 
 .profile-icon {
     padding-left: 10px;
     font-size: 30px;
     color: #007bff;
-    /* Change the color as desired */
+    transition: color 0.3s;
+}
+
+.profile-icon:hover {
+    color: #ffc107;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    flex-shrink: 0; /* Ensure footer does not shrink */
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Footer specific styling */
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.footer .row {
+    margin-bottom: 20px;
+}
+
+.footer .social-icons .list-inline-item a {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer .social-icons .list-inline-item a:hover {
+    color: #ffc107;
+}
+
+/* Responsive styling for the footer */
+@media (max-width: 991.98px) {
+    .footer h5 {
+        font-size: 18px;
+    }
+    .footer p,
+    .footer .footer-link-list li {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .footer h5 {
+        font-size: 16px;
+    }
+    .footer p,
+    .footer .footer-link-list li {
+        font-size: 12px;
+    }
+    .footer .container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .footer h5 {
+        font-size: 14px;
+    }
+    .footer p,
+    .footer .footer-link-list li {
+        font-size: 10px;
+    }
+    .footer .container {
+        padding: 5px;
+    }
+    .footer .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer .row .col-md-4 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
 }

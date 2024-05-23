@@ -1,9 +1,10 @@
 .card-img-top {
-    max-width: 350px;
-    height: 400px;
+    width: 100%;
+    height: auto; /* Ensure image aspect ratio is maintained */
 }
 
 .card {
+    margin-bottom: 20px;
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
@@ -14,31 +15,65 @@
 }
 
 .card-body {
-    height: 250px; /* Set a fixed height for the card body */
-    overflow: hidden; /* Hide overflowing content */
+    min-height: 200px; /* Set a minimum height for the card body */
+    padding: 20px; /* Add padding inside the card body */
 }
 
 .card-title {
-    overflow: hidden;
-    text-overflow: ellipsis; /* Truncate long titles with an ellipsis */
-    white-space: nowrap; /* Prevent titles from wrapping */
+    font-size: 18px; /* Increase font size for better readability */
+    margin-bottom: 10px; /* Add some space between title and other content */
 }
 
 .card-price {
-    margin-top: 10px; /* Add some spacing between price and description */
+    font-size: 16px; /* Adjust font size for price */
 }
+
+/* Adjustments for different screen sizes */
+@media (max-width: 991.98px) {
+    .card {
+        margin-bottom: 15px; /* Reduce margin between cards */
+    }
+}
+
+@media (max-width: 767.98px) {
+    .card {
+        margin-bottom: 10px; /* Further reduce margin between cards */
+    }
+
+    .card-body {
+        min-height: 180px; /* Adjust minimum height for smaller screens */
+    }
+
+    .card-title {
+        font-size: 16px; /* Reduce font size for smaller screens */
+    }
+
+    .card-price {
+        font-size: 14px; /* Further reduce font size for smaller screens */
+    }
+}
+
+@media (max-width: 575.98px) {
+    .card {
+        margin-bottom: 5px; /* Reduce margin between cards even more */
+    }
+
+    .card-body {
+        min-height: 160px; /* Further adjust minimum height for smallest screens */
+    }
+
+    .card-title {
+        font-size: 14px; /* Further reduce font size for smallest screens */
+    }
+
+    .card-price {
+        font-size: 12px; /* Further reduce font size for smallest screens */
+    }
+}
+
 
 #gallery {
     padding-top: 100px;
 }
 
-.profile-link {
-    text-decoration: none;
-}
 
-.profile-icon {
-    font-size: 30px;
-    color: #007bff;
-    padding-left: 10px;
-    /* Change the color as desired */
-}

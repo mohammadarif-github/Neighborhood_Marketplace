@@ -40,6 +40,23 @@ body {
     border-color: white; /* Remove border color */
     transition: background-color 0.3s, color 0.3s; /* Add transition */
 }
+.footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40;
+    /* Adjust as needed */
+    color: #fff;
+    /* Adjust as needed */
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+.footer p {
+    margin: 0;
+}
 
 .btn-search:hover {
     background-color: #ffc107; /* Change background color on hover */
@@ -90,23 +107,6 @@ body {
     backdrop-filter: blur(10px);
 }
 
-.footer {
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #343a40;
-    /* Adjust as needed */
-    color: #fff;
-    /* Adjust as needed */
-    text-align: center;
-    padding: 20px 0;
-}
-
-
-.footer p {
-    margin: 0;
-}
 
 
 .profile-link {

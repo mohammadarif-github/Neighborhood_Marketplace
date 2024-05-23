@@ -127,21 +127,21 @@ const updateNavbar = () => {
       // If authenticated, show the logout button
       authButtons.innerHTML = `
       <li class="nav-item">
-      <a class="nav-link" href="listings.html">Listings</a>
-      </li>
-      <li class="nav-item">
-      <a class="nav-link" href="add_listing.html">Add Listing</a>
-      </li>
-      <li class="nav-item">
-      <a class="nav-link" href="#" onclick="Logout()">Logout</a>
-      </li>
-            <li class ="nav-item">
-            <a href="profile.html?id=${user_id}"class="profile-link">
-              <div class="profile-icon">
-              <i class="fas fa-user-circle"></i>
-              </div>
-            </a>
-            </li>
+        <a class="nav-link" href="listings.html">Listings</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="add_listing.html">Add Listing</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#" onclick="Logout()">Logout</a>
+    </li>
+    <li class="nav-item profile-link-item"> <!-- Added a class for consistent styling -->
+        <a href="profile.html?id=${user_id}" class="nav-link profile-link">
+            <div class="profile-icon">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </a>
+    </li>
         `;
     } else {
       // If not authenticated, show the login and sign up buttons
