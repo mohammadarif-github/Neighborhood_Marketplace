@@ -70,13 +70,13 @@
 
 @media (max-width: 767.98px) {
     .transact_update-container {
-        margin-top: 7vh;
+        margin-top: 10vh;
     }
 }
 
 @media (max-width: 575.98px) {
     .transact_update-container {
-        margin-top: 3vh;
+        margin-top: 5vh;
     }
 }
 
