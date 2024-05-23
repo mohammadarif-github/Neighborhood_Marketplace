@@ -1,26 +1,32 @@
-const loadDetails = () => {
+const loadDetails = async () => {
     const id = localStorage.getItem("id");
-    const Token = localStorage.getItem("token");
-
-    fetch(`https://neighborhood-marketplace-869o.onrender.com/profile/${id}/`, {
+    const url = `https://neighborhood-marketplace-869o.onrender.com/api/profile/${id}/`;
+    const options = {
         method: "GET",
-        headers: {
-            "Authorization": `Token ${Token}`,
+    };
+
+    try {
+        const response = await fetchWithToken(url, options);
+        if (response.ok) {
+            const data = await response.json();
+            document.getElementById("first_name").value = data.first_name;
+            document.getElementById("last_name").value = data.last_name;
+            document.getElementById("email").value = data.email;
+            document.getElementById("address").value = data.address;
+            document.getElementById("phone").value = data.phone;
+            // document.getElementById("image").files[0] = data.image;
+        } else {
+            console.error('Failed to fetch profile details:', response.status);
+            // Optionally display an error message to the user
         }
-    })
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById("first_name").value = data.first_name;
-        document.getElementById("last_name").value = data.last_name;
-        document.getElementById("email").value = data.email;
-        document.getElementById("address").value = data.address;
-        document.getElementById("phone").value = data.phone;
-        // document.getElementById("image").files[0] = data.image;
-    })
-    .catch(error => console.error("Error fetching profile details:", error));
+    } catch (error) {
+        console.error("Error fetching profile details:", error);
+        // Optionally display an error message to the user
+    }
 };
 
-const editProfile = () => {
+
+const editProfile = async () => {
     const id = localStorage.getItem("id");
     const Token = localStorage.getItem("token");
     const first_name = document.getElementById("first_name").value;
@@ -41,15 +47,17 @@ const editProfile = () => {
         formdata.append("image", image);
     }
 
-    fetch(`https://neighborhood-marketplace-869o.onrender.com/profile/${id}/`, {
+    const url = `https://neighborhood-marketplace-869o.onrender.com/api/profile/${id}/`;
+    const options = {
         method: "PATCH",
         headers: {
             "Authorization": `Token ${Token}`,
         },
         body: formdata
-    })
-    
-    .then(response => {
+    };
+
+    try {
+        const response = await fetchWithToken(url, options);
         console.log("Response status:", response.status);
         if (response.ok) {
             alert("Profile updated successfully.");
@@ -57,10 +65,11 @@ const editProfile = () => {
         } else {
             alert("Failed to update Profile.");
         }
-    })
-    .catch(error => {
+    } catch (error) {
         console.error("Error updating profile:", error);
-        localStorage.setItem("error",error);
-    });
+        localStorage.setItem("error", error);
+        // Optionally display an error message to the user
+    }
 };
+
 loadDetails();

@@ -1,17 +1,25 @@
-const Trasactions =()=> {
-    const Token = localStorage.getItem("token");
-    fetch("https://neighborhood-marketplace-869o.onrender.com/transactions/",{
-        method : "GET",
-        headers :{
-            "Authorization":`Token ${Token}`,
+async function Transactions() {
+    const url = "https://neighborhood-marketplace-869o.onrender.com/api/transactions/";
+    const options = {
+        method: "GET",
+    };
+
+    try {
+        const response = await fetchWithToken(url, options);
+        if (response.ok) {
+            const data = await response.json();
+            showTransactions(data);
+        } else {
+            console.error('Failed to fetch transactions:', response.status);
+            // Optionally display an error message to the user
         }
-    })
-    .then((res)=>res.json())
-    .then((data)=>showtransactions(data))
-    .catch((error)=>console.log("Error Fetching Listings",error));
+    } catch (error) {
+        console.error('Error fetching transactions:', error);
+        // Optionally display an error message to the user
+    }
 };
 
-const showtransactions =(items) =>{
+const showTransactions =(items) =>{
     const transactionTable = document.getElementById("transactionTable");
     
     const headerRow = document.createElement('tr');
@@ -44,24 +52,24 @@ const showtransactions =(items) =>{
 const updateTransaction = (id) => {
     window.location.href = `transaction_update.html?id=${id}`;
 };
-const deleteTransaction = (id) => {
-    const Token = localStorage.getItem("token")
-    fetch(`https://neighborhood-marketplace-869o.onrender.com/transactions/${id}/`, {
+
+const deleteTransaction = async (id) => {
+    const url = `https://neighborhood-marketplace-869o.onrender.com/api/transactions/${id}/`;
+    const options = {
         method: 'DELETE',
-        headers :{
-            "Authorization":`Token ${Token}`,
-        }
-    })
-    .then(response => {
-        if (!response.ok) {
+    };
+
+    try {
+        const response = await fetchWithToken(url, options);
+        if (response.ok) {
+            console.log('Transaction deleted successfully');
+            window.location.href = "transaction.html";
+        } else {
             throw new Error('Network response was not ok');
         }
-        console.log('Transaction deleted successfully');
-        window.location.href = "transaction.html";
-    })
-    .catch(error => {
+    } catch (error) {
         console.error('Error deleting Transaction:', error);
-    });
+    }
 };
 
-Trasactions();
+Transactions();

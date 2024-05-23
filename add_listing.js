@@ -1,9 +1,8 @@
-const add_listing = (event) => {
+const add_listing = async (event) => {
     event.preventDefault();
-    const Token = localStorage.getItem("token");
+
     const user_id = localStorage.getItem("id");
-    console.log("Token",Token);
-    console.log("ID",user_id);
+    console.log("ID", user_id);
     const title = document.getElementById("title").value;
     const price = document.getElementById("price").value;
     const description = document.getElementById("description").value;
@@ -28,30 +27,32 @@ const add_listing = (event) => {
         formdata.append("image", imagefile);
     }
 
-    fetch("https://neighborhood-marketplace-869o.onrender.com/listings/", {
+    const url = "https://neighborhood-marketplace-869o.onrender.com/api/listings/";
+    const options = {
         method: "POST",
-        headers: {
-            "Authorization": `Token ${Token}`,
-        },
-        body: formdata
-    })
-    .then((res) => res.json())
-    .then((data) => {
+        body: formdata,
+    };
+
+    try {
+        const response = await fetchWithToken(url, options);
+        const data = await response.json();
+
         console.log("Response:", data);
+
         if (data.detail) {
             alert("You must be logged in to upload item!");
             window.location.href = "login.html";
         } else if (data.id) {
             alert("Item listed successfully.");
-            window.location.href="listings.html";
+            window.location.href = "listings.html";
         } else {
             alert("Failed to list item.");
             console.log(data);
         }
-    })
-    .catch(error => {
+    } catch (error) {
         console.error('Error uploading item:', error);
-    });
+    }
 };
 
 document.getElementById("submitBtn").addEventListener("click", add_listing);
+

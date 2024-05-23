@@ -162,7 +162,6 @@ main {
 /* Banner Section Styling */
 #banner {
     position: relative;
-    background-image: url('img/banner-img.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;

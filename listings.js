@@ -1,23 +1,24 @@
-const listings =()=>{
-    const Token = localStorage.getItem("token");
-    fetch("https://neighborhood-marketplace-869o.onrender.com/listings/",{
-        method : "GET",
-        headers :{
-            "Authorization":`Token ${Token}`,
-        }
-    })
-    .then((res)=>res.json())
-    .then((data) => {
-        if (data.detail) {
-            window.location.href = "login.html";
-            alert("You must be logged in to see the Listing Product !!");
-        }
-        else
-            showlisting(data);
-    })
-    .catch((error)=>console.log("Error Fetching Listings",error));
-};
 
+async function listings() {
+    const id = localStorage.getItem("id");
+    const url = "https://neighborhood-marketplace-869o.onrender.com/api/listings/"
+    const options = {
+        method : "GET",
+    }
+    try {
+        const response = await fetchWithToken(url,options);
+        if (response.ok) {
+            const data = await response.json();
+            showlisting(data);
+        } else {
+            console.error('Failed to fetch profile data:', response.status);
+            // Optionally display an error message to the user
+        }
+    } catch (error) {
+        console.error('Error fetching profile data:', error);
+        // Optionally display an error message to the user
+    }
+}
 const showlisting =(items)=>{
     const gallerySection = document.getElementById("gallery");
     const containerDiv = document.createElement("div");
@@ -57,37 +58,48 @@ const showlisting =(items)=>{
     });
 };
 
-const createTransaction = (listingId,event) => {
-    const Token = localStorage.getItem("token");
-    const user_id = localStorage.getItem("id")
-    console.log("Buyer:",user_id)
-    console.log("Token:",Token)
-    console.log("Listing:",listingId)
-    info ={
+const createTransaction = async (listingId, event) => {
+    const access_token = localStorage.getItem("access_token"); // Use access_token key
+    const user_id = localStorage.getItem("user_id");
+    console.log("Buyer:", user_id);
+    console.log("Token:", access_token);
+    console.log("Listing:", listingId);
+    
+    const info = {
         listing: listingId,
         status: "Pending",
+        buyer: user_id, // Include buyer ID in the request payload
     };
-    fetch("https://neighborhood-marketplace-869o.onrender.com/transactions/", {
+    
+    const url = "https://neighborhood-marketplace-869o.onrender.com/api/transactions/";
+    const options = {
         method: "POST",
         headers: {
-            "Authorization": `Token ${Token}`,
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(info)
-    })
-    .then((res) => res.json())
-    .then((data) => {
-        if (data.detail) {
-            alert("You must be logged in to buy an item!");
-            window.location.href = "login.html";
+        body: JSON.stringify(info),
+    };
+
+    try {
+        const response = await fetchWithToken(url, options);
+        if (response.ok) {
+            const data = await response.json();
+            if (data.detail) {
+                alert("You must be logged in to buy an item!");
+                window.location.href = "login.html";
+            } else {
+                alert("Transaction created successfully.");
+                window.location.href = `transaction.html`;
+            }
         } else {
-            alert("Transaction successfully.");
-            window.location.href = `transaction.html`;
+            alert("Failed to create transaction.");
+            console.error('Failed to create transaction:', response.status);
+            // Optionally display an error message to the user
         }
-        // window.location.href="transaction.html";
-    })
-    .catch(error => {
+    } catch (error) {
+        alert("Error creating transaction.");
         console.error('Error creating transaction:', error);
-    });
+        // Optionally display an error message to the user
+    }
 };
 listings();
