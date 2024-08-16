@@ -57,7 +57,6 @@ const Register = (event) => {
 };
 
 
-
 const Login = (event) => {
     event.preventDefault();
     const username = get_value("login_username");
