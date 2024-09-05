@@ -168,6 +168,9 @@ const updateNavbar = () => {
         // If not authenticated, show the login and sign up buttons
         authButtons.innerHTML = `
             <li class="nav-item">
+                <a class="nav-link" href="listings.html">Listings</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link btn btn-secondary mx-4" href="login.html">Login</a>
             </li>
             <li class="nav-item">

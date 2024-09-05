@@ -1,24 +1,30 @@
 
-async function listings() {
-    const id = localStorage.getItem("id");
-    const url = "https://neighborhood-marketplace-869o.onrender.com/api/listings/"
-    const options = {
-        method : "GET",
-    }
-    try {
-        const response = await fetchWithToken(url,options);
-        if (response.ok) {
-            const data = await response.json();
-            showlisting(data);
-        } else {
-            console.error('Failed to fetch profile data:', response.status);
-            // Optionally display an error message to the user
-        }
-    } catch (error) {
-        console.error('Error fetching profile data:', error);
-        // Optionally display an error message to the user
-    }
-}
+// async function listings() {
+//     const id = localStorage.getItem("id");
+//     const url = "https://neighborhood-marketplace-869o.onrender.com/api/listings/"
+//     const options = {
+//         method : "GET",
+//     }
+//     try {
+//         const response = await fetchWithToken(url,options);
+//         if (response.ok) {
+//             const data = await response.json();
+//             showlisting(data);
+//         } else {
+//             console.error('Failed to fetch profile data:', response.status);
+//             // Optionally display an error message to the user
+//         }
+//     } catch (error) {
+//         console.error('Error fetching profile data:', error);
+//         // Optionally display an error message to the user
+//     }
+// }
+const listings = () =>{
+    fetch("https://neighborhood-marketplace-869o.onrender.com/api/listings/")
+    .then((res) => res.json() )
+    .then((data)=> showlisting(data));
+};
+
 const showlisting =(items)=>{
     const gallerySection = document.getElementById("gallery");
     const containerDiv = document.createElement("div");
